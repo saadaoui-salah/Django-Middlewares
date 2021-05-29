@@ -9,5 +9,6 @@ def simple_view(request):
     context = {
         'form' : form
     }
-    raise DemoException('this just exception test for middleware')
+    # IT's WORK WITH PROCESS EXCEPTION FUNC
+    # raise DemoException('this just exception test for middleware')
     return render(request, template_name="form.html", context=context )
