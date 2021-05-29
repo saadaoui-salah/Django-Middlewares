@@ -3,5 +3,5 @@ from .models import Person
 
 class PersonForm(ModelForm):
     class Meta:
-        models = Person
+        model = Person
         fields = '__all__'
