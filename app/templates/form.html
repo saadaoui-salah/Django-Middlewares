@@ -16,5 +16,11 @@
     {{form.email}}
     {{form.submit}}
     <button type="submit" >Add Person</button>
+
+    {{ new_data|json_script:"new_data" }}
+    <script>
+        const new_data = JSON.parse(document.getElementById('new_data').textContent)
+        console.log(new_data)
+    </script>
 </body>
 </html>
