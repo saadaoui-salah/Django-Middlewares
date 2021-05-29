@@ -15,6 +15,6 @@ class DemoMiddleware:
     def process_view(self, request, view_func, view_args, view_kwargs):
         # executing before call view
         # give acces to the view & arguments
-        print(f'view name: {view_func.__name__()} ')
+        print(f'view name: {view_func.__name__} ')
 
         pass
