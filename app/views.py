@@ -5,11 +5,8 @@ class DemoException(Exception):
     pass
 
 def simple_view(request):
-    if request.method == 'POST':
-        form = PersonForm()
-        context = {
-            'form' : form
-        }
-        raise DemoException('This is just a demo exce')
-        
+    form = PersonForm()
+    context = {
+        'form' : form
+    }
     return render(request, template_name="form.html", context=context )
