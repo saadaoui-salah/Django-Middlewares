@@ -1,11 +1,7 @@
-
-
-from django_middlewares.settings import MIDDLEWARE
-
-
 class DemoMiddleware:
     def __init__(self, get_response):
         self.get_response = get_response
+        self.num_exceptions = 0
 
     def __call__(self, request):
         print("MIDDLEWARE CALLED")
@@ -16,5 +12,9 @@ class DemoMiddleware:
         # executing before call view
         # give acces to the view & arguments
         print(f'view name: {view_func.__name__} ')
+        pass
 
+    def process_exception(self, request, exception):
+        self.num_exceptions += 1
+        print(f"exceptions number: {self.num_exceptions}")
         pass
